@@ -1,18 +1,10 @@
+import Link from "next/link";
+import { services } from "./services";
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-slate-950 px-8 py-24 text-white">
-      <p className="mb-6 text-lg font-bold text-cyan-400">
-        212 CLEANING
-      </p>
-
-      <h1 className="max-w-3xl text-5xl font-bold leading-tight">
-        A cleaner space.
-        A better workday.
-      </h1>
-
-      <p className="mt-6 max-w-xl text-xl text-slate-300">
-        Commercial cleaning tailored to your business.
-      </p>
-    </main>
-  );
+return <><section className="hero"><div className="wrap hero-grid"><div><p className="eyebrow">COMMERCIAL SPACES. CONSIDERED CARE.</p><h1>A cleaner space.<br/><em>A better workday.</em></h1><p className="intro">Commercial cleaning and floor care for businesses, buildings, and the people who keep them moving.</p><div className="actions"><Link className="button" href="/contact">Plan your clean <span>↗</span></Link><a className="quiet" href="#services">Explore our services ↓</a></div><p className="hero-note">Manhattan · Brooklyn · NYC · Long Island</p></div><div className="architecture" aria-hidden="true"><div className="window-grid">{Array.from({length:12},(_,i)=><span key={i}/>)}</div><div className="art-label"><span>212 / A FRESH PERSPECTIVE</span><strong>Spaces ready<br/>for what’s next.</strong></div></div></div></section>
+<div className="ribbon"><div className="wrap">OFFICES & COMMERCIAL BUILDINGS <span> / </span> PROPERTY MANAGERS <span> / </span> MANAGED FACILITIES</div></div>
+<section className="section wrap" id="services"><div className="section-heading"><div><p className="eyebrow">01 / WHAT WE DO</p><h2>The right care.<br/>For every surface.</h2></div><p>From daily upkeep to a fresh start after construction, explore a cleaning plan for your commercial space.</p></div><div className="service-grid">{services.map((s,i)=><Link className="service-card" key={s.slug} href={"/services/"+s.slug}><span className="number">0{i+1}</span><h3>{s.title}</h3><p>{s.description}</p><span className="card-link">Explore service ↗</span></Link>)}</div></section>
+<section className="approach section" id="approach"><div className="wrap"><p className="eyebrow">02 / HOW IT STARTS</p><h2>Simple steps.<br/>A considered plan.</h2><div className="steps">{[["Tell us about your space","Share your location, property type, and cleaning priorities."],["Work through the details","Discuss surfaces, access, frequency, and the right scope."],["Agree on your plan","Review your quote and service details before scheduling."]].map(([t,p],i)=><article key={t}><span>0{i+1}</span><h3>{t}</h3><p>{p}</p></article>)}</div></div></section>
+<section className="section wrap" id="areas"><div className="section-heading"><div><p className="eyebrow">03 / WHERE WE WORK</p><h2>Across the city.<br/>Beyond the boroughs.</h2></div><p>Discuss commercial cleaning in Manhattan, Brooklyn, Queens, the Bronx, and Long Island. Availability is confirmed for each request.</p></div><div className="areas">{["Manhattan","Brooklyn","Queens","The Bronx","Long Island"].map(a=><Link key={a} href="/contact">{a} <span>↗</span></Link>)}</div></section>
+<section className="cta"><div className="wrap"><p className="eyebrow">LET’S MAKE ROOM FOR BETTER.</p><h2>Your space.<br/>Our next conversation.</h2><Link className="button" href="/contact">Request a commercial quote ↗</Link></div></section></>;
 }
