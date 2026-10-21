@@ -1,6 +1,8 @@
+import { requireSignIn } from "./auth-access";
 import Link from "next/link";
 import { services } from "./services";
-export default function Home() {
+export default async function Home() {
+await requireSignIn();
 return <><section className="hero"><div className="wrap hero-grid"><div><p className="eyebrow">COMMERCIAL SPACES. CONSIDERED CARE.</p><h1>A cleaner space.<br/><em>A better workday.</em></h1><p className="intro">Commercial cleaning and floor care for businesses, buildings, and the people who keep them moving.</p><div className="actions"><Link className="button" href="/contact">Plan your clean <span>↗</span></Link><a className="quiet" href="#services">Explore our services ↓</a></div><p className="hero-note">Manhattan · Brooklyn · NYC · Long Island</p></div><div className="architecture" aria-hidden="true"><div className="window-grid">{Array.from({length:12},(_,i)=><span key={i}/>)}</div><div className="art-label"><span>212 / A FRESH PERSPECTIVE</span><strong>Spaces ready<br/>for what’s next.</strong></div></div></div></section>
 <div className="ribbon"><div className="wrap">OFFICES & COMMERCIAL BUILDINGS <span> / </span> PROPERTY MANAGERS <span> / </span> MANAGED FACILITIES</div></div>
 <section className="section wrap" id="services"><div className="section-heading"><div><p className="eyebrow">01 / WHAT WE DO</p><h2>The right care.<br/>For every surface.</h2></div><p>From daily upkeep to a fresh start after construction, explore a cleaning plan for your commercial space.</p></div><div className="service-grid">{services.map((s,i)=><Link className="service-card" key={s.slug} href={"/services/"+s.slug}><span className="number">0{i+1}</span><h3>{s.title}</h3><p>{s.description}</p><span className="card-link">Explore service ↗</span></Link>)}</div></section>

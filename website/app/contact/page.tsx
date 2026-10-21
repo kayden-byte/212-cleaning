@@ -1,8 +1,10 @@
+import { requireSignIn } from "../auth-access";
 import Link from "next/link";
 
 export const metadata = { title: "Request a quote" };
 
-export default function Contact() {
+export default async function Contact() {
+  await requireSignIn();
   return (
     <main className="wrap section detail">
       <Link className="back" href="/">← Home</Link>
