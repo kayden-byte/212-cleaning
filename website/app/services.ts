@@ -72,7 +72,7 @@ export const services: CleaningService[] = [
       "Floor stripping and sealing",
       "Tile and grout cleaning",
       "Specialty stone cleaning",
-      "Italian marble polishing"
+      "Marble polishing"
     ],
     "floorTypes": [
       "Carpet",
@@ -91,7 +91,7 @@ export const services: CleaningService[] = [
     "description": "Cleaning and polishing for commercial stone floors, with treatments selected after assessing the material and finish.",
     "tasks": [
       "Specialty stone cleaning",
-      "Italian marble polishing",
+      "Marble polishing",
       "Review existing finishes and surface condition",
       "Agree on appropriate care and maintenance"
     ]
