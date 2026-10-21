@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
+import ReviewToggle from "./review-toggle";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </header>
         {children}
+        <ReviewToggle />
         <footer>
           <div className="wrap footer-inner">
             <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="212 Maintenance" width={150} height={115} priority /></Link>
