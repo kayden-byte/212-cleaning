@@ -1,4 +1,5 @@
-export const services = [
+export type CleaningService = { slug: string; title: string; headline: string; description: string; tasks: string[]; floorTypes?: string[]; };
+export const services: CleaningService[] = [
   {
     "slug": "commercial-cleaning",
     "title": "Commercial Cleaning",
@@ -9,6 +10,14 @@ export const services = [
       "Restrooms and break areas",
       "Vacuuming and floor cleaning",
       "Trash and recycling collection"
+    ],
+    "floorTypes": [
+      "Carpet",
+      "Carpet tile",
+      "VCT (vinyl composition tile)",
+      "LVT / luxury vinyl",
+      "Tile and grout",
+      "Stone"
     ]
   },
   {
@@ -30,6 +39,7 @@ export const services = [
     "description": "Deep cleaning and ongoing care for commercial carpeting.",
     "tasks": [
       "Carpet condition assessment",
+      "Carpet shampooing and extraction",
       "High-traffic areas",
       "Spot treatment discussed during assessment",
       "A maintenance schedule for your facility"
@@ -53,10 +63,34 @@ export const services = [
     "headline": "Put your best floor forward.",
     "description": "Hard floor care planned around the surface and how your space is used.",
     "tasks": [
-      "Assess floor materials and condition",
-      "Routine floor cleaning",
-      "Discuss polishing and treatment options",
-      "Agree on a maintenance program"
+      "Floor scrubbing",
+      "Floor waxing and buffing",
+      "Carpet shampooing and extraction",
+      "Floor restoration",
+      "Floor stripping and sealing",
+      "Tile and grout cleaning",
+      "Specialty stone cleaning",
+      "Italian marble polishing"
+    ],
+    "floorTypes": [
+      "Carpet",
+      "Carpet tile",
+      "VCT (vinyl composition tile)",
+      "LVT / luxury vinyl",
+      "Tile and grout",
+      "Stone"
+    ]
+  },
+  {
+    "slug": "stone-cleaning",
+    "title": "Stone Cleaning & Polishing",
+    "headline": "Special care for stone surfaces.",
+    "description": "Cleaning and polishing for commercial stone floors, with treatments selected after assessing the material and finish.",
+    "tasks": [
+      "Specialty stone cleaning",
+      "Italian marble polishing",
+      "Review existing finishes and surface condition",
+      "Agree on appropriate care and maintenance"
     ]
   }
 ];
