@@ -17,7 +17,8 @@ export const services: CleaningService[] = [
       "VCT (vinyl composition tile)",
       "LVT / luxury vinyl",
       "Tile and grout",
-      "Stone"
+      "Stone",
+      "Concrete"
     ]
   },
   {
@@ -63,6 +64,7 @@ export const services: CleaningService[] = [
     "headline": "Put your best floor forward.",
     "description": "Hard floor care planned around the surface and how your space is used.",
     "tasks": [
+      "Concrete floor cleaning",
       "Floor scrubbing",
       "Floor waxing and buffing",
       "Carpet shampooing and extraction",
@@ -78,7 +80,8 @@ export const services: CleaningService[] = [
       "VCT (vinyl composition tile)",
       "LVT / luxury vinyl",
       "Tile and grout",
-      "Stone"
+      "Stone",
+      "Concrete"
     ]
   },
   {
