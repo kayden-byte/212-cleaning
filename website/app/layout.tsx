@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <header className="wrap nav">
           <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="212 Maintenance" width={150} height={115} priority /></Link>
           <nav className="links" aria-label="Main navigation">
-          <Link href="/#services">Services</Link>
+          <Link href="/services">Services</Link>
           <Link href="/#approach">Our approach</Link>
           <Link href="/#areas">Service areas</Link>
           <Link className="nav-quote" href="/contact">Request a quote ↗</Link>
