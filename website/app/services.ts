@@ -1,39 +1,6 @@
 export type CleaningService = { slug: string; title: string; headline: string; description: string; tasks: string[]; floorTypes?: string[]; };
 export const services: CleaningService[] = [
   {
-    "slug": "commercial-cleaning",
-    "title": "Commercial Cleaning",
-    "headline": "Routine care. A better first impression.",
-    "description": "Commercial cleaning for offices, restrooms, break areas, and managed facilities, with a scope and schedule planned around your property.",
-    "tasks": [
-      "Accessible surfaces and shared spaces",
-      "Restrooms and break areas",
-      "Vacuuming and floor cleaning",
-      "Trash and recycling collection"
-    ],
-    "floorTypes": [
-      "Carpet",
-      "Carpet tile",
-      "VCT (vinyl composition tile)",
-      "LVT / luxury vinyl",
-      "Tile and grout",
-      "Stone",
-      "Concrete"
-    ]
-  },
-  {
-    "slug": "post-construction-cleaning",
-    "title": "Post-Construction Cleaning",
-    "headline": "The final step before opening day.",
-    "description": "Detailed cleaning for commercial spaces after construction or renovation.",
-    "tasks": [
-      "Construction dust cleanup",
-      "Interior surface detailing",
-      "Floor cleaning",
-      "Final presentation cleaning"
-    ]
-  },
-  {
     "slug": "commercial-carpet-cleaning",
     "title": "Commercial Carpet Cleaning",
     "headline": "Freshen up your busiest spaces.",
@@ -56,6 +23,70 @@ export const services: CleaningService[] = [
       "Address high-traffic zones",
       "Discuss spot cleaning needs",
       "Plan ongoing maintenance"
+    ]
+  },
+  {
+    "slug": "vct-floor-cleaning",
+    "title": "Commercial VCT Floor Cleaning",
+    "headline": "VCT floor cleaning and finish maintenance",
+    "description": "Cleaning and maintenance for vinyl composition tile, including stripping, sealing, waxing, and buffing where suitable.",
+    "tasks": [
+      "Review VCT flooring and existing finish",
+      "Discuss floor scrubbing and buildup",
+      "Assess stripping, sealing, waxing, and buffing needs",
+      "Plan access and ongoing VCT maintenance"
+    ]
+  },
+  {
+    "slug": "lvt-floor-cleaning",
+    "title": "Commercial LVT Floor Cleaning",
+    "headline": "Luxury vinyl floor cleaning for commercial spaces",
+    "description": "Cleaning and ongoing care for luxury vinyl tile and luxury vinyl plank flooring, matched to the surface and its finish.",
+    "tasks": [
+      "Review luxury vinyl tile or plank material",
+      "Assess high-traffic areas and surface buildup",
+      "Select cleaning methods suited to the finish",
+      "Discuss ongoing luxury vinyl maintenance"
+    ]
+  },
+  {
+    "slug": "tile-and-grout-cleaning",
+    "title": "Commercial Tile & Grout Cleaning",
+    "headline": "Care for hard tile and grout.",
+    "description": "Commercial tile and grout cleaning for offices, restrooms, entrances, and shared spaces.",
+    "tasks": [
+      "Review hard-tile material and grout condition",
+      "Discuss buildup and problem grout lines",
+      "Agree on appropriate tile and grout cleaning methods",
+      "Plan access and ongoing floor maintenance"
+    ],
+    "floorTypes": [
+      "Hard tile",
+      "Grout lines"
+    ]
+  },
+  {
+    "slug": "stone-cleaning",
+    "title": "Stone Cleaning & Polishing",
+    "headline": "Special care for stone surfaces.",
+    "description": "Cleaning and polishing for commercial stone floors, with treatments selected after assessing the material and finish.",
+    "tasks": [
+      "Specialty stone cleaning",
+      "Marble polishing",
+      "Review existing finishes and surface condition",
+      "Agree on appropriate care and maintenance"
+    ]
+  },
+  {
+    "slug": "concrete-floor-cleaning",
+    "title": "Commercial Concrete Floor Cleaning",
+    "headline": "Concrete floor cleaning planned around the surface",
+    "description": "Concrete floor cleaning for commercial properties, with methods chosen after reviewing surface condition and existing coatings.",
+    "tasks": [
+      "Review concrete floor condition and coatings",
+      "Discuss buildup, marks, and high-traffic zones",
+      "Agree on suitable concrete cleaning methods",
+      "Plan access and routine concrete floor care"
     ]
   },
   {
@@ -85,31 +116,15 @@ export const services: CleaningService[] = [
     ]
   },
   {
-    "slug": "stone-cleaning",
-    "title": "Stone Cleaning & Polishing",
-    "headline": "Special care for stone surfaces.",
-    "description": "Cleaning and polishing for commercial stone floors, with treatments selected after assessing the material and finish.",
+    "slug": "post-construction-cleaning",
+    "title": "Post-Construction Cleaning",
+    "headline": "The final step before opening day.",
+    "description": "Detailed cleaning for commercial spaces after construction or renovation.",
     "tasks": [
-      "Specialty stone cleaning",
-      "Marble polishing",
-      "Review existing finishes and surface condition",
-      "Agree on appropriate care and maintenance"
-    ]
-  },
-  {
-    "slug": "tile-and-grout-cleaning",
-    "title": "Commercial Tile & Grout Cleaning",
-    "headline": "Care for hard tile and grout.",
-    "description": "Commercial tile and grout cleaning for offices, restrooms, entrances, and shared spaces.",
-    "tasks": [
-      "Review hard-tile material and grout condition",
-      "Discuss buildup and problem grout lines",
-      "Agree on appropriate tile and grout cleaning methods",
-      "Plan access and ongoing floor maintenance"
-    ],
-    "floorTypes": [
-      "Hard tile",
-      "Grout lines"
+      "Construction dust cleanup",
+      "Interior surface detailing",
+      "Floor cleaning",
+      "Final presentation cleaning"
     ]
   }
 ];

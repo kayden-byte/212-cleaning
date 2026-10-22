@@ -1,21 +1,4 @@
 export const serviceCopy: Record<string, { heading: string; paragraphs: string[]; faqs: { question: string; answer: string }[] }> = {
-  "commercial-cleaning": {
-    "heading": "Commercial cleaning planned around your building",
-    "paragraphs": [
-      "Office cleaning needs depend on occupancy, traffic, and how shared spaces are used. We review accessible surfaces, restrooms, break areas, and floors to agree on a practical commercial cleaning scope.",
-      "Tell us about building access, tenant hours, and the areas that need regular attention. Discuss recurring commercial cleaning alongside periodic carpet and hard-floor care."
-    ],
-    "faqs": [
-      {
-        "question": "How often should an office be cleaned?",
-        "answer": "Office cleaning frequency depends on foot traffic, occupancy, and the spaces involved. Share your preferred schedule so we can discuss a suitable plan."
-      },
-      {
-        "question": "Is floor care part of commercial cleaning?",
-        "answer": "Routine vacuuming and floor cleaning can be included in the agreed scope. Deep carpet cleaning, floor stripping, and polishing are reviewed separately."
-      }
-    ]
-  },
   "post-construction-cleaning": {
     "heading": "Post-construction cleaning before opening day",
     "paragraphs": [
@@ -115,6 +98,57 @@ export const serviceCopy: Record<string, { heading: string; paragraphs: string[]
       {
         "question": "Will grout cleaning restore its original color?",
         "answer": "Results vary with grout condition, staining, previous products, and wear. We assess the surface and discuss expectations. Repairs, recoloring, and sealing are not assumed to be included."
+      }
+    ]
+  },
+  "vct-floor-cleaning": {
+    "heading": "VCT floor cleaning and finish maintenance",
+    "paragraphs": [
+      "Vinyl composition tile can need both routine cleaning and periodic finish care. We review wear, buildup, and the existing coating before discussing VCT cleaning, floor stripping and sealing, or waxing and buffing.",
+      "Share the location, approximate floor area, and access hours. The agreed VCT maintenance plan depends on the floor condition, finish, and how the space is used."
+    ],
+    "faqs": [
+      {
+        "question": "Does every VCT floor need stripping?",
+        "answer": "No. We assess the existing finish and wear first. Routine cleaning, buffing, or another maintenance method may be more appropriate than stripping."
+      },
+      {
+        "question": "Can VCT cleaning fit around business hours?",
+        "answer": "Share your occupancy and access schedule. Timing, drying, and reopening needs are discussed before work is scheduled."
+      }
+    ]
+  },
+  "lvt-floor-cleaning": {
+    "heading": "Luxury vinyl floor cleaning for commercial spaces",
+    "paragraphs": [
+      "Commercial LVT cleaning focuses on luxury vinyl tile and plank surfaces. We review the flooring material, existing finish, traffic patterns, and any manufacturer care information before agreeing on cleaning methods.",
+      "LVT should not automatically receive the same treatment as VCT. Tell us about buildup, visible marks, and previous maintenance so the cleaning scope can be matched to your floor."
+    ],
+    "faqs": [
+      {
+        "question": "Do you wax luxury vinyl floors?",
+        "answer": "Waxing is not assumed to be appropriate for luxury vinyl. We review the material, manufacturer guidance, and existing finish before proposing any treatment."
+      },
+      {
+        "question": "Is LVT the same as VCT?",
+        "answer": "No. Luxury vinyl and vinyl composition tile are different flooring products. Their finishes and care requirements can differ, so each surface needs assessment."
+      }
+    ]
+  },
+  "concrete-floor-cleaning": {
+    "heading": "Concrete floor cleaning planned around the surface",
+    "paragraphs": [
+      "Commercial concrete cleaning begins with the surface condition and any sealer or coating already present. We review traffic, buildup, and visible marks before discussing suitable cleaning methods.",
+      "Describe how the space is used, the approximate floor area, and any previous treatments. Cleaning, coating work, polishing, and repairs are different scopes; specialty treatments must be agreed separately."
+    ],
+    "faqs": [
+      {
+        "question": "Does concrete floor cleaning include polishing?",
+        "answer": "Polishing is not assumed to be included in a concrete cleaning quote. Describe your desired finish so any specialty treatment can be discussed separately."
+      },
+      {
+        "question": "Can every concrete stain be removed?",
+        "answer": "Results depend on the concrete, coating, stain, and previous treatments. We assess problem areas and discuss realistic expectations before work is agreed."
       }
     ]
   }
