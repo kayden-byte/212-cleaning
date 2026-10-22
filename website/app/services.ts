@@ -4,7 +4,7 @@ export const services: CleaningService[] = [
     "slug": "commercial-cleaning",
     "title": "Commercial Cleaning",
     "headline": "Routine care. A better first impression.",
-    "description": "Cleaning plans for offices, commercial buildings, and managed facilities.",
+    "description": "Commercial cleaning for offices, restrooms, break areas, and managed facilities, with a scope and schedule planned around your property.",
     "tasks": [
       "Accessible surfaces and shared spaces",
       "Restrooms and break areas",
@@ -37,7 +37,7 @@ export const services: CleaningService[] = [
     "slug": "commercial-carpet-cleaning",
     "title": "Commercial Carpet Cleaning",
     "headline": "Freshen up your busiest spaces.",
-    "description": "Deep cleaning and ongoing care for commercial carpeting.",
+    "description": "Commercial carpet cleaning, carpet shampooing, and extraction, with care planned around high-traffic areas and your property schedule.",
     "tasks": [
       "Carpet condition assessment",
       "Carpet shampooing and extraction",
@@ -48,7 +48,7 @@ export const services: CleaningService[] = [
   },
   {
     "slug": "carpet-tile-cleaning",
-    "title": "Carpet Tile Cleaning",
+    "title": "Commercial Carpet Tile Cleaning",
     "headline": "Care for every square.",
     "description": "Cleaning and maintenance for modular carpet tile systems.",
     "tasks": [
@@ -62,7 +62,7 @@ export const services: CleaningService[] = [
     "slug": "floor-care",
     "title": "Floor Cleaning & Maintenance",
     "headline": "Put your best floor forward.",
-    "description": "Hard floor care planned around the surface and how your space is used.",
+    "description": "Commercial floor cleaning and maintenance, including VCT care, stripping and sealing, waxing and buffing, concrete cleaning, and tile and grout care.",
     "tasks": [
       "Concrete floor cleaning",
       "Floor scrubbing",
@@ -94,6 +94,22 @@ export const services: CleaningService[] = [
       "Marble polishing",
       "Review existing finishes and surface condition",
       "Agree on appropriate care and maintenance"
+    ]
+  },
+  {
+    "slug": "tile-and-grout-cleaning",
+    "title": "Commercial Tile & Grout Cleaning",
+    "headline": "Care for hard tile and grout.",
+    "description": "Commercial tile and grout cleaning for offices, restrooms, entrances, and shared spaces.",
+    "tasks": [
+      "Review hard-tile material and grout condition",
+      "Discuss buildup and problem grout lines",
+      "Agree on appropriate tile and grout cleaning methods",
+      "Plan access and ongoing floor maintenance"
+    ],
+    "floorTypes": [
+      "Hard tile",
+      "Grout lines"
     ]
   }
 ];
