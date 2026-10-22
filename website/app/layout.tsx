@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <AuthProvider>
-          <div className="topbar">COMMERCIAL PROPERTIES ONLY · NYC & LONG ISLAND</div>
+          <div className="topbar">COMMERCIAL PROPERTIES ONLY · NYC & LONG ISLAND <a href="tel:+16315327534">Call (631) 532-7534 ↗</a></div>
           <header className="wrap nav">
           <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="212 Maintenance" width={150} height={115} priority /></Link>
           <nav className="links" aria-label="Main navigation">

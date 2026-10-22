@@ -1,5 +1,7 @@
 import { requireSignIn } from "../auth-access";
 import Link from "next/link";
+import ContactForm from "../contact-form";
+import { services } from "../services";
 
 export const metadata = { title: "Request a quote" };
 
@@ -23,18 +25,10 @@ export default async function Contact() {
           Email kayden@212carpet.com ↗
         </a>
       </div>
-      <h2 style={{ fontSize: 30, marginTop: 45 }}>What to have ready</h2>
-      <ul className="contact-list">
-        <li>Your business and contact information</li>
-        <li>Property location and approximate square footage</li>
-        <li>Cleaning services and priority areas</li>
-        <li>Preferred schedule and cleaning frequency</li>
-      </ul>
-      <div className="notice">
-        Use the phone or email link above to get in touch.
-        Email opens in your email app; your message is sent only when you send it.
-        Service availability and the final scope are confirmed after review.
-      </div>
+      <section style={{ marginTop: 45 }} aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading" style={{ marginBottom: 25 }}>Contact us</h2>
+        <ContactForm services={services.map(s => s.title)} />
+      </section>
     </main>
   );
 }
