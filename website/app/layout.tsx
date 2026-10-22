@@ -23,6 +23,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="topbar">COMMERCIAL PROPERTIES ONLY · NYC & LONG ISLAND <a href="tel:+16315327534">Call (631) 532-7534 ↗</a></div>
           <header className="wrap nav">
           <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="212 Maintenance" width={150} height={115} priority /></Link>
+          <address className="header-contact" aria-label="Contact 212 Maintenance">
+            <a className="header-phone" href="tel:+16315327534">(631) 532-7534</a>
+            <a className="header-email" href="mailto:kayden@212carpet.com">kayden@212carpet.com</a>
+          </address>
           <nav className="links" aria-label="Main navigation">
           <Link href="/services">Services</Link>
           <Link href="/#approach">Our approach</Link>

@@ -53,3 +53,14 @@ footer{background:#08002e;border-top:1px solid var(--line)}
 .contact-form{padding:30px;background:var(--surface);border:1px solid var(--line);border-radius:10px;min-width:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-form label{display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:600;margin-bottom:20px}.contact-form input,.contact-form select,.contact-form textarea{width:100%;min-width:0;background:#0e004b;border:1px solid #776a9d;color:#fff;border-radius:5px;padding:13px;font:16px Arial;line-height:1.5}.contact-form textarea{resize:vertical}.contact-form input:focus-visible,.contact-form select:focus-visible,.contact-form textarea:focus-visible{outline:3px solid #8ed853;outline-offset:2px}.contact-form textarea::placeholder{color:#bdb6ce}.contact-form .button{cursor:pointer;font:600 14px Arial}.contact-form button:disabled{opacity:.65;cursor:wait}.form-note,.form-status{font-size:13px;line-height:1.7;color:var(--muted)}.form-status{margin-bottom:0}.form-status:empty{display:none}.form-status.success{color:#a3ed69}.form-trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 .wireframe .contact-form,.wireframe .contact-form input,.wireframe .contact-form select,.wireframe .contact-form textarea{background:#fff;color:#222;border:1px dashed #888}.wireframe .contact-phone{color:#222}
 @media(max-width:760px){.contact-layout{grid-template-columns:1fr;gap:30px}.contact-form{padding:22px}.topbar a{margin:6px 0 0;display:block}}@media(max-width:480px){.form-grid{grid-template-columns:1fr;gap:0}}
+
+/* Keep contact details immediately before the Services navigation. */
+.nav{gap:24px}
+.header-contact{display:flex;flex-direction:column;gap:8px;flex-shrink:0;font-style:normal}
+.header-phone{font-size:clamp(24px,2.3vw,30px);font-weight:800;line-height:1.15;letter-spacing:-.6px;color:#8ed853}
+.header-email{font-size:18px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.header-contact a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(min-width:1051px){.nav .links{gap:16px}}
+@media(max-width:1050px){.nav{flex-wrap:wrap}.header-contact{margin-left:auto}.nav .links{width:100%;justify-content:flex-end}}
+@media(max-width:480px){.header-contact{flex-basis:100%;margin-left:0}.nav .links{justify-content:flex-start}.header-phone{font-size:28px}.header-email{font-size:18px}}
+.wireframe .header-phone{color:#222}
