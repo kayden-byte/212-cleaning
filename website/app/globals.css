@@ -3,6 +3,33 @@
 
 .brand{display:inline-flex;align-items:center}.brand img{display:block;width:140px;height:auto}.intro,.section-heading>p,.service-card p,.steps p,footer p{color:#60616a}.eyebrow,.number{color:#47680c}.topbar .eyebrow,.cta .eyebrow{color:var(--lime)}.approach,.notice{background:#e7e8e5}.button:hover{background:#3c3c49}.architecture{background:#bfc2be}.art-label{background:linear-gradient(transparent,#242430)}
 .review-toggle{position:fixed;bottom:20px;right:20px;z-index:1000;border:1px solid #777;border-radius:30px;background:white;color:#242430;padding:14px 20px;font:600 13px Arial;box-shadow:0 3px 20px #0002;cursor:pointer}
+/* 212 Coastal Carpet inspired navy and green theme. */
+:root{--ink:#0e004b;--lime:#69bd29;--paper:#f5f5f5;--surface:#190c59;--muted:#cec9df;--line:#41366e}
+body{background:var(--ink);color:var(--paper);color-scheme:dark}
+.topbar{background:linear-gradient(100deg,#69bd29,#355e18);color:#fff}
+.nav{border-bottom:1px solid var(--line)}
+.brand{background:#f5f5f5;border-radius:8px;padding:8px 12px}
+.links a:not(.nav-quote):hover,.quiet:hover,.back:hover{color:#8ed853}
+.nav-quote,.button,.cta .button{background:var(--lime);border:1px solid var(--lime);color:#102006}
+.nav-quote:hover,.button:hover,.cta .button:hover{background:#8ed853;border-color:#8ed853;color:#102006}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a3ed69;outline-offset:5px}
+.intro,.section-heading>p,.service-card p,.steps p,footer p{color:var(--muted)}
+.eyebrow,.number,.steps article>span,.card-link,.task-list li:before{color:#8ed853}
+.hero-note{color:var(--muted)}
+.ribbon{color:#102006}
+.service-card{background:var(--surface);border-color:var(--line)}
+.service-card:hover{background:#24166b;border-color:#69bd29}
+.approach,.notice{background:#190c59}
+.steps article,.task-list li{border-color:var(--line)}
+.areas a{background:#190c59;border-color:#51447c}
+.areas a:hover{background:var(--lime);color:#102006}
+.cta{background:#08002e;border-top:1px solid var(--line);color:var(--paper)}
+footer{background:#08002e;border-top:1px solid var(--line)}
+.architecture{background:#29205a;box-shadow:inset 0 0 80px #08002e66}
+.window-grid span{background:linear-gradient(140deg,#8ed853,#5c697c 50%,#21134e);border-color:#716a9699}
+.art-label{background:linear-gradient(transparent,#0e004b)}
+.review-toggle{background:#190c59;color:var(--paper);border-color:#69bd29}
+
 .wireframe{--ink:#222;--lime:#ddd;--paper:#fff}
 .wireframe body,.wireframe section,.wireframe header,.wireframe footer,.wireframe .topbar,.wireframe .ribbon{background:white!important;color:#222!important}
 .wireframe section,.wireframe header,.wireframe footer,.wireframe .service-card,.wireframe .steps article{border:1px dashed #888!important;border-radius:0!important}
@@ -15,3 +42,8 @@
 .wireframe .architecture:after{content:"IMAGE / BRAND VISUAL";font:14px Arial;color:#555;letter-spacing:2px}
 
 .auth-screen{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;overflow:auto;padding:28px;background:linear-gradient(135deg,#242430f5,#242430e8);backdrop-filter:blur(12px)}.auth-panel{width:min(100%,520px);padding:32px;background:#f5f5f3;border-radius:18px;box-shadow:0 24px 80px #0005}.auth-panel h1{font-size:38px;letter-spacing:-1.5px}.auth-panel>p{line-height:1.6}.auth-panel .cl-rootBox,.auth-panel .cl-cardBox{width:100%;max-width:100%}@media(max-width:500px){.auth-screen{padding:14px}.auth-panel{padding:22px 16px}.auth-panel h1{font-size:30px}}
+
+.auth-screen{background:linear-gradient(135deg,#0e004bf5,#08002ef0)}
+.auth-panel{background:#190c59;color:#f5f5f5;border:1px solid #51447c}
+.wireframe .service-card,.wireframe .notice,.wireframe .brand,.wireframe .review-toggle{background:#fff!important;color:#222!important}
+.wireframe .card-link,.wireframe .steps article>span,.wireframe .task-list li:before{color:#555!important}
