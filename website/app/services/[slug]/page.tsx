@@ -21,7 +21,7 @@ export default async function Service({ params }: Props) {
   const copy = serviceCopy[slug];
   return <main className="wrap section detail">
     <Link className="back" href="/services">← All services</Link>
-    <p className="eyebrow" style={{ marginTop: 45 }}>212 MAINTENANCE / COMMERCIAL PROPERTIES</p>
+    <p className="eyebrow" style={{ marginTop: 45 }}>212 MAINTENANCE / RESIDENTIAL & COMMERCIAL</p>
     <h1>{service.title}</h1>
     <p className="intro">{service.description}</p>
     <section style={{ marginTop: 35 }}>

@@ -5,7 +5,7 @@ import { services } from "../services";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore 212 Maintenance commercial cleaning, carpet cleaning, floor care, post-construction cleaning, and stone polishing services.",
+  description: "Explore residential and commercial carpet cleaning, floor care, post-construction cleaning, and stone polishing from 212 Maintenance.",
 };
 
 export default async function ServicesPage() {
@@ -13,7 +13,7 @@ export default async function ServicesPage() {
   return <main className="wrap section">
     <Link className="back" href="/">← Home</Link>
     <div className="section-heading" style={{ marginTop: 40 }}>
-      <div><p className="eyebrow">OUR SERVICES</p><h1>Care for every<br /><em>commercial space.</em></h1></div>
+      <div><p className="eyebrow">OUR SERVICES</p><h1>Care for every<br /><em>home and business.</em></h1></div>
       <p>Explore cleaning and maintenance for your property. Choose a service to see what’s included and discuss a plan for your space.</p>
     </div>
     <div className="service-grid">
