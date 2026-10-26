@@ -64,3 +64,11 @@ footer{background:#08002e;border-top:1px solid var(--line)}
 @media(max-width:1050px){.nav{flex-wrap:wrap}.header-contact{margin-left:auto}.nav .links{width:100%;justify-content:flex-end}}
 @media(max-width:480px){.header-contact{flex-basis:100%;margin-left:0}.nav .links{justify-content:flex-start}.header-phone{font-size:28px}.header-email{font-size:18px}}
 .wireframe .header-phone{color:#222}
+
+/* Softer logo with a bold, readable company name beside it. */
+.brand{gap:14px;background:transparent;border-radius:0;padding:0;flex-shrink:0}
+.brand img{width:100px;height:auto;opacity:.65;border-radius:6px}
+.brand .brand-name{max-width:180px;margin:0;font-size:28px;line-height:1.05;font-weight:900;letter-spacing:-.7px;color:var(--paper)}
+@media(min-width:1051px){.nav{flex-wrap:wrap}.nav .links{margin-left:auto;justify-content:flex-end}}
+@media(max-width:480px){.brand{gap:12px}.brand img{width:80px}.brand .brand-name{max-width:160px;font-size:25px}}
+.wireframe .brand .brand-name{color:#222}
