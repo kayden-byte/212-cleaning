@@ -1,4 +1,4 @@
-import { ClerkProvider, UserButton } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,7 +20,7 @@ return <html lang="en"><body><AuthProvider>
 <a className="skip-link" href="#main-content">Skip to content</a>
 <div className="topbar"><div className="wrap topbar-inner"><span>RESIDENTIAL & COMMERCIAL</span><span>NEW YORK CITY + LONG ISLAND</span></div></div>
 <header className="site-header"><div className="wrap"><div className="brand-row"><Link className="brand" href="/" aria-label="212 Maintenance home"><Image src="/212-maintenance.webp" alt="" width={150} height={115} priority/><span className="brand-name">212 <span>Maintenance</span></span></Link><a className="header-phone" href="tel:+16315327534"><span className="header-call-label">LET’S TALK ABOUT YOUR SPACE</span><span><Phone/> (631) 532-7534</span></a></div>
-<SiteNavigation account={authConfigured()?<UserButton/>:null}/></div></header>
+<SiteNavigation account={null}/></div></header>
 <main id="main-content">{children}</main>
 <footer><div className="wrap footer-grid"><div><Link className="footer-brand" href="/">212 <span>Maintenance</span></Link><p>Clean floors. Better first impressions.<br/>Floor care for homes and businesses.</p><a className="footer-phone" href="tel:+16315327534">(631) 532-7534</a></div><div><h2>Explore</h2><Link href="/services">Cleaning services</Link><Link href="/service-areas">Service areas</Link><Link href="/contact">Request a quote</Link></div><div><h2>Where we work</h2>{regions.map(r=><Link key={r.slug} href={"/service-areas/"+r.slug}>{r.name}</Link>)}</div></div><div className="wrap footer-bottom"><span>© {new Date().getFullYear()} 212 Maintenance</span><span>Residential & commercial · NYC & Long Island</span></div></footer>
 <div className="mobile-actions"><a href="tel:+16315327534"><Phone/> Call now</a><Link href="/contact">Request a quote</Link></div>
