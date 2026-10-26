@@ -1,32 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { requireSignIn } from "../auth-access";
 import { services } from "../services";
-
-export const metadata: Metadata = {
-  title: "Services",
-  description: "Explore residential and commercial carpet cleaning, floor care, post-construction cleaning, and stone polishing from 212 Maintenance.",
-};
-
-export default async function ServicesPage() {
-  await requireSignIn();
-  return <main className="wrap section">
-    <Link className="back" href="/">← Home</Link>
-    <div className="section-heading" style={{ marginTop: 40 }}>
-      <div><p className="eyebrow">OUR SERVICES</p><h1>Care for every<br /><em>home and business.</em></h1></div>
-      <p>Explore cleaning and maintenance for your property. Choose a service to see what’s included and discuss a plan for your space.</p>
-    </div>
-    <div className="service-grid">
-      {services.map((service, index) => <Link className="service-card" key={service.slug} href={`/services/${service.slug}`}>
-        <span className="number">0{index + 1}</span>
-        <h2 style={{ fontSize: 26, letterSpacing: "-.5px", marginTop: 20 }}>{service.title}</h2>
-        <p>{service.description}</p>
-        {service.floorTypes && <ul style={{ paddingLeft: 18, fontSize: 13, lineHeight: 1.8, listStyle: "disc" }}>{service.floorTypes.map(type => <li key={type}>{type}</li>)}</ul>}
-        <span className="card-link">View service details ↗</span>
-      </Link>)}
-    </div>
-    <div className="notice" style={{ marginTop: 40 }}>
-      Need help choosing? Call <a className="quiet" href="tel:+16315327534">(631) 532-7534</a> or <Link className="quiet" href="/contact">contact us</Link> to discuss your property.
-    </div>
-  </main>;
-}
+import { Breadcrumbs, ServiceCard, QuoteCTA } from "../design-components";
+export const metadata:Metadata={title:"Floor & Carpet Cleaning Services | NYC & Long Island",description:"Explore carpet, carpet tile, VCT, LVT, tile and grout, stone, concrete, and post-construction cleaning for homes and businesses.",alternates:{canonical:"/services"}};
+export default async function Services(){await requireSignIn();return <><section className="wrap section"><Breadcrumbs items={[{label:"Services"}]}/><div className="page-intro"><p className="eyebrow">SURFACE BY SURFACE</p><h1>The right care.<br/><span>For every floor.</span></h1><p className="intro">Residential and commercial floor cleaning in NYC and Long Island. Start with your flooring and explore the care it needs.</p></div><div className="service-grid">{services.map((s,i)=><ServiceCard key={s.slug} service={s} index={i}/>)}</div></section><QuoteCTA/></>;}

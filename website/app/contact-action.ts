@@ -17,14 +17,14 @@ export async function sendContact(_previous: ContactState, data: FormData): Prom
     fields[name] = (value || "").trim();
     if (fields[name].length > limit) return failure;
   }
-  if (!fields.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email) || /[\r\n]/.test(fields.email) || fields.message.length < 10)
-    return { ok: false, message: "Please enter your name, a valid email, and at least 10 characters about your cleaning needs." };
+  if (!fields.name || fields.phone.replace(/\D/g, "").length < 10 || !fields.location || !fields.service || (fields.email && (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email) || /[\r\n]/.test(fields.email))))
+    return { ok: false, message: "Please enter your name, a valid phone number, your location, and a service. Check your email if you added one." };
   if (!process.env.RESEND_API_KEY || !process.env.CONTACT_FROM_EMAIL) return failure;
   try {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from: process.env.CONTACT_FROM_EMAIL, to: ["kayden@212carpet.com"], reply_to: fields.email,
+      body: JSON.stringify({ from: process.env.CONTACT_FROM_EMAIL, to: ["kayden@212carpet.com"], ...(fields.email ? { reply_to: fields.email } : {}),
         subject: "212 Maintenance — new website inquiry",
         text: Object.entries(fields).map(([key,value]) => `${key}: ${value}`).join("\n\n") }),
       signal: AbortSignal.timeout(10000),
@@ -32,6 +32,6 @@ export async function sendContact(_previous: ContactState, data: FormData): Prom
     if (!response.ok) return failure;
     const result = await response.json();
     if (!result.id) return failure;
-    return { ok: true, message: "Your inquiry has been sent. Thank you—we’ll get back to you using the contact details you provided." };
+    return { ok: true, message: "Your inquiry has been sent. Thank you—we’ll contact you about your quote." };
   } catch { return failure; }
 }

@@ -1,0 +1,5 @@
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import type { LocalArea } from "./area-data";
+export default function AreaDirectory({region,areas}:{region:string;areas:LocalArea[]}){const [query,setQuery]=useState("");const shown=areas.filter(a=>a.name.toLowerCase().includes(query.trim().toLowerCase()));return <div className="area-directory"><label className="directory-search">Find your neighborhood or town<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Start typing your area…"/></label><p className="directory-count" role="status">{shown.length} {shown.length===1?"area":"areas"}{query?" matching your search":" to explore"}</p><div className="area-links">{shown.map(a=><Link key={a.slug} href={"/service-areas/"+region+"/"+a.slug}>{a.name}<span aria-hidden="true">→</span></Link>)}</div>{shown.length===0&&<div className="notice">Can’t find your area? <a href="tel:+16315327534">Call (631) 532-7534</a> to discuss your address.</div>}</div>;}

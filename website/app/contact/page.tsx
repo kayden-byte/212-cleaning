@@ -1,30 +1,7 @@
+import type { Metadata } from "next";
 import { requireSignIn } from "../auth-access";
-import Link from "next/link";
 import ContactForm from "../contact-form";
 import { services } from "../services";
-
-export const metadata = { title: "Request a quote" };
-
-export default async function Contact() {
-  await requireSignIn();
-  return (
-    <main className="wrap section detail">
-      <Link className="back" href="/">← Home</Link>
-      <p className="eyebrow" style={{ marginTop: 45 }}>LET’S PLAN YOUR CLEAN</p>
-      <h1>A fresh start<br />starts here.</h1>
-      <p className="intro">
-        Tell us what your home or business needs. Call us to discuss
-        your property and request a cleaning quote.
-      </p>
-      <div className="actions" style={{ marginTop: 30 }}>
-        <a className="button" href="tel:+16315327534">
-          Call (631) 532-7534 ↗
-        </a>
-      </div>
-      <section style={{ marginTop: 45 }} aria-labelledby="contact-form-heading">
-        <h2 id="contact-form-heading" style={{ marginBottom: 25 }}>Contact us</h2>
-        <ContactForm services={services.map(s => s.title)} />
-      </section>
-    </main>
-  );
-}
+import { Breadcrumbs, Phone } from "../design-components";
+export const metadata:Metadata={title:"Request a Cleaning Quote",description:"Request a quote for residential or commercial floor cleaning in NYC and Long Island. Call 212 Maintenance at (631) 532-7534.",alternates:{canonical:"/contact"}};
+export default async function Contact({searchParams}:{searchParams:Promise<{service?:string;area?:string}>}){await requireSignIn();const query=await searchParams;return <div className="wrap section"><Breadcrumbs items={[{label:"Request a quote"}]}/><div className="contact-layout"><div><p className="eyebrow">YOUR NEXT CLEAN STARTS HERE</p><h1>Tell us about<br/><span>your space.</span></h1><p className="intro">A few details help us understand your floors, your location, and what needs attention.</p><a className="contact-phone" href="tel:+16315327534"><Phone/> (631) 532-7534</a><p className="contact-caption">Prefer a conversation? Call to discuss your project.</p><div className="contact-checklist"><h2>Helpful details to have ready</h2><ul className="task-list"><li>Your town or neighborhood</li><li>Flooring type and approximate size</li><li>Cleaning priorities and surface condition</li><li>Access requirements and preferred timing</li></ul></div></div><div className="quote-panel"><h2>Request your quote</h2><p>Start with the essentials. Add more detail if you’d like.</p><ContactForm services={services.map(s=>s.title)} initialService={typeof query.service==="string"?query.service:""} initialLocation={typeof query.area==="string"?query.area:""}/></div></div></div>;}

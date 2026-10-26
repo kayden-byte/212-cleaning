@@ -1,42 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireSignIn } from "../../auth-access";
 import { services } from "../../services";
 import { serviceCopy } from "../../service-copy";
-
-type Props = { params: Promise<{ slug: string }> };
-export function generateStaticParams() { return services.map(s => ({ slug: s.slug })); }
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const service = services.find(s => s.slug === slug);
-  if (!service) notFound();
-  return { title: `${service.title} | NYC & Long Island`, description: service.description };
-}
-export default async function Service({ params }: Props) {
-  await requireSignIn();
-  const { slug } = await params;
-  const service = services.find(s => s.slug === slug);
-  if (!service) notFound();
-  const copy = serviceCopy[slug];
-  return <main className="wrap section detail">
-    <Link className="back" href="/services">← All services</Link>
-    <p className="eyebrow" style={{ marginTop: 45 }}>212 MAINTENANCE / RESIDENTIAL & COMMERCIAL</p>
-    <h1>{service.title}</h1>
-    <p className="intro">{service.description}</p>
-    <section style={{ marginTop: 35 }}>
-      <h2 style={{ fontSize: 30 }}>{copy.heading}</h2>
-      {copy.paragraphs.map(p => <p key={p} style={{ fontSize: 16, lineHeight: 1.8, marginTop: 20 }}>{p}</p>)}
-    </section>
-    {service.floorTypes && <section style={{ marginTop: 35 }}><h2 style={{ fontSize: 30 }}>Flooring types</h2><ul className="task-list">{service.floorTypes.map(type => <li key={type}>{type}</li>)}</ul></section>}
-    <h2 style={{ fontSize: 30, marginTop: 45 }}>What to discuss for {service.title.toLowerCase()}</h2>
-    <ul className="task-list">{service.tasks.map(task => <li key={task}>{task}</li>)}</ul>
-    <section style={{ marginTop: 45 }}>
-      <h2 style={{ fontSize: 30 }}>Common questions</h2>
-      {copy.faqs.map(faq => <article key={faq.question} style={{ marginTop: 28 }}><h3>{faq.question}</h3><p style={{ lineHeight: 1.8 }}>{faq.answer}</p></article>)}
-    </section>
-    <div className="notice">Final scope, methods, timing, and availability are confirmed after reviewing your property. Specialty treatments and debris hauling must be discussed before scheduling.</div>
-    <div className="actions"><Link className="button" href={"/contact?service=" + encodeURIComponent(service.title)}>Request a service quote ↗</Link><a className="quiet" href="tel:+16315327534">Call (631) 532-7534 ↗</a></div>
-    <section style={{ marginTop: 45 }}><h2 style={{ fontSize: 30 }}>Explore related services</h2><ul className="contact-list">{services.filter(s => s.slug !== slug).map(s => <li key={s.slug}><Link className="quiet" href={`/services/${s.slug}`}>{s.title}</Link></li>)}</ul></section>
-  </main>;
-}
+import ContactForm from "../../contact-form";
+import { Breadcrumbs, ServiceCard, QuoteCTA, Phone } from "../../design-components";
+import { siteUrl } from "../../seo";
+type Props={params:Promise<{slug:string}>};
+export function generateStaticParams(){return services.map(s=>({slug:s.slug}));}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const {slug}=await params;const s=services.find(s=>s.slug===slug);if(!s)notFound();return {title:s.title+" | NYC & Long Island",description:s.description,alternates:{canonical:"/services/"+slug},openGraph:{title:s.title+" | 212 Maintenance",description:s.description,url:"/services/"+slug}};}
+export default async function Service({params}:Props){await requireSignIn();const {slug}=await params;const s=services.find(s=>s.slug===slug);if(!s)notFound();const copy=serviceCopy[slug];return <><section className="wrap section"><Breadcrumbs items={[{label:"Services",href:"/services"},{label:s.title}]}/><div className="service-detail-grid"><div><p className="eyebrow">HOMES & BUSINESSES / NYC & LONG ISLAND</p><h1>{s.title}</h1><p className="intro">{s.description}</p><a className="text-link" href="tel:+16315327534"><Phone/> (631) 532-7534</a><div className={"detail-swatch surface-swatch swatch-"+slug} aria-hidden="true"/><section className="content-block"><h2>{copy.heading}</h2>{copy.paragraphs.map(p=><p key={p}>{p}</p>)}</section><section className="content-block"><p className="eyebrow">YOUR CLEANING PLAN</p><h2>What we’ll review.</h2><ul className="task-list">{s.tasks.map(task=><li key={task}>{task}</li>)}</ul></section>{s.floorTypes&&<section className="content-block"><h2>Surfaces to discuss</h2><ul className="surface-tags">{s.floorTypes.map(t=><li key={t}>{t}</li>)}</ul></section>}<section className="content-block"><h2>Common questions</h2><div className="faq-list">{copy.faqs.map(f=><details key={f.question}><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section><div className="notice">Methods, timing, and final scope are confirmed after reviewing your property. Specialty treatments and debris hauling must be discussed in advance.</div></div><aside className="quote-panel sticky-quote"><p className="eyebrow">LET’S PLAN YOUR CLEAN</p><h2>Request a quote</h2><p>Tell us where you are and what needs attention.</p><ContactForm services={services.map(s=>s.title)} initialService={s.title}/></aside></div><section className="related-services"><p className="eyebrow">MORE FOR YOUR SPACE</p><h2>Explore related services.</h2><div className="service-grid">{services.filter(other=>other.slug!==slug).slice(0,3).map((s,i)=><ServiceCard key={s.slug} service={s} index={i}/>)}</div></section></section><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"Service",name:s.title,description:s.description,url:siteUrl+"/services/"+slug,provider:{"@type":"Organization",name:"212 Maintenance",url:siteUrl},areaServed:["Manhattan","Brooklyn","Queens","The Bronx","Long Island"]}).replace(/</g,"\u003c")}}/><QuoteCTA/></>;}
