@@ -87,3 +87,17 @@ footer{background:#08002e;border-top:1px solid var(--line)}
 .nav .links .nav-quote{margin-left:auto;padding-left:26px;padding-right:26px}
 @media(max-width:760px){.nav{gap:22px;padding-top:22px}.nav .brand img{width:75px}.nav .brand-name{max-width:180px;font-size:30px}.header-contact{grid-column:1/-1;align-items:flex-start}.nav .links{gap:8px;font-size:17px}.nav .links>a{flex:1 1 auto;padding:13px 16px}.nav .links .nav-quote{margin-left:0}}
 @media(max-width:480px){.nav .brand-name{max-width:190px;font-size:32px}.nav .links>a{flex-basis:calc(50% - 8px)}}
+
+/* Accessible service-area dropdown, available on desktop and mobile. */
+.area-dropdown{position:relative}
+.area-dropdown summary{display:flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:14px 20px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;list-style:none}
+.area-dropdown summary::-webkit-details-marker{display:none}
+.area-dropdown summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+.area-dropdown[open] summary{border-color:var(--lime);color:#8ed853}
+.area-dropdown[open] summary::after{transform:rotate(225deg);margin-top:4px}
+.area-dropdown-menu{position:absolute;top:calc(100% + 10px);left:0;z-index:100;min-width:240px;padding:8px;background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 15px 35px #0006}
+.area-dropdown-menu a{display:block;padding:14px 16px;font-size:17px;border-radius:4px}
+.area-dropdown-menu a:hover{background:#24166b}
+@media(max-width:760px){.area-dropdown{flex:1 1 auto}.area-dropdown-menu{min-width:220px}}
+@media(max-width:480px){.area-dropdown{flex-basis:calc(50% - 8px)}.area-dropdown-menu{left:auto;right:0;max-width:calc(100vw - 44px)}}
+.wireframe .area-dropdown summary,.wireframe .area-dropdown-menu{background:#fff;color:#222;border-color:#888}
