@@ -13,16 +13,12 @@ export default async function Contact() {
       <p className="eyebrow" style={{ marginTop: 45 }}>LET’S PLAN YOUR CLEAN</p>
       <h1>A fresh start<br />starts here.</h1>
       <p className="intro">
-        Tell us what your home or business needs. Call or email to discuss
+        Tell us what your home or business needs. Call us to discuss
         your property and request a cleaning quote.
       </p>
       <div className="actions" style={{ marginTop: 30 }}>
         <a className="button" href="tel:+16315327534">
           Call (631) 532-7534 ↗
-        </a>
-        <a className="quiet" style={{ overflowWrap: "anywhere" }}
-          href="mailto:kayden@212carpet.com?subject=Cleaning%20quote">
-          Email kayden@212carpet.com ↗
         </a>
       </div>
       <section style={{ marginTop: 45 }} aria-labelledby="contact-form-heading">
