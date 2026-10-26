@@ -22,10 +22,10 @@ export default async function ServiceAreas() {
     <p className="eyebrow" style={{marginTop:40}}>WHERE WE WORK</p>
     <h1>Cleaning across NYC & Long Island.</h1>
     <p className="intro">Residential and commercial cleaning and floor care in Manhattan, Brooklyn, Queens, the Bronx, and Long Island. Call to confirm availability for your address.</p>
-    <div className="areas">{areas.map(area => <a key={area.slug} href={`#${area.slug}`}>{area.name}</a>)}</div>
+    <div className="areas">{areas.map(area => <a key={area.slug} href={`/service-areas/${area.slug}`}>{area.name}</a>)}</div>
     {areas.map(area => <section key={area.slug} id={area.slug} style={{marginTop:48,scrollMarginTop:30}}>
       <h2>{area.name} cleaning services</h2><p style={{lineHeight:1.8}}>{area.copy}</p>
-      <Link className="quiet" href="/contact">Request a quote for {area.name}</Link>
+      <Link className="quiet" href={`/service-areas/${area.slug}`}>Explore {area.name} cleaning</Link>
     </section>)}
     <section style={{marginTop:48}}><h2>Find the right service</h2><ul className="contact-list">{services.map(service => <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.title}</Link></li>)}</ul></section>
     <div className="notice">Service availability, scheduling, and final scope are confirmed for each property.</div>
