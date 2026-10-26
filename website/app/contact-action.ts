@@ -5,7 +5,7 @@ import { authConfigured } from "./auth-config";
 
 type ContactState = { ok: boolean; message: string };
 export async function sendContact(_previous: ContactState, data: FormData): Promise<ContactState> {
-  const failure = { ok: false, message: "Your inquiry wasn’t sent. Please call (631) 532-7534 or email kayden@212carpet.com." };
+  const failure = { ok: false, message: "Your inquiry wasn’t sent. Please call (631) 532-7534." };
   if (!authConfigured()) return failure;
   const { userId } = await auth();
   if (!userId) return { ok: false, message: "Please sign in again before sending your inquiry." };
