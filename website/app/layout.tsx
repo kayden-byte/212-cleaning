@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav className="links" aria-label="Main navigation">
           <Link href="/services">Services</Link>
           <Link href="/#approach">Our approach</Link>
-          <details className="area-dropdown"><summary>Service areas</summary><div className="area-dropdown-menu"><Link href="/service-areas">All service areas</Link>{[["manhattan","Manhattan"],["brooklyn","Brooklyn"],["queens","Queens"],["bronx","The Bronx"],["long-island","Long Island"]].map(([slug,name]) => <Link key={slug} href={`/service-areas#${slug}`}>{name}</Link>)}</div></details>
+          <details className="area-dropdown"><summary>Service areas</summary><div className="area-dropdown-menu"><Link href="/service-areas">All service areas</Link>{[["manhattan","Manhattan"],["brooklyn","Brooklyn"],["queens","Queens"],["bronx","The Bronx"],["long-island","Long Island"]].map(([slug,name]) => <Link key={slug} href={`/service-areas/${slug}`}>{name}</Link>)}</div></details>
           <Link className="nav-quote" href="/contact">Request a quote</Link>
           {authConfigured() && <UserButton />}</nav>
           </header>
