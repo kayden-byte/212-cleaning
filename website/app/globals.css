@@ -72,3 +72,18 @@ footer{background:#08002e;border-top:1px solid var(--line)}
 @media(min-width:1051px){.nav{flex-wrap:wrap}.nav .links{margin-left:auto;justify-content:flex-end}}
 @media(max-width:480px){.brand{gap:12px}.brand img{width:80px}.brand .brand-name{max-width:160px;font-size:25px}}
 .wireframe .brand .brand-name{color:#222}
+
+/* Stronger two-row header with large, comfortable navigation targets. */
+.nav{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 32px;padding-top:28px;padding-bottom:0;border-bottom:3px solid var(--lime)}
+.nav .brand{gap:18px}
+.nav .brand-name{max-width:none;font-size:clamp(30px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px}
+.header-contact{margin:0;align-items:flex-end}
+.header-call-label{display:block;margin-bottom:7px;font-size:12px;line-height:1.2;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.header-phone{font-size:clamp(26px,3vw,36px)}
+.nav .links{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;width:100%;margin:0;padding:16px 0;border-top:1px solid var(--line);font-size:18px;font-weight:800}
+.nav .links>a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 20px;border-radius:6px}
+.nav .links>a:not(.nav-quote){background:var(--surface);border:1px solid var(--line)}
+.nav .links>a:not(.nav-quote):hover{background:#24166b;border-color:var(--lime)}
+.nav .links .nav-quote{margin-left:auto;padding-left:26px;padding-right:26px}
+@media(max-width:760px){.nav{gap:22px;padding-top:22px}.nav .brand img{width:75px}.nav .brand-name{max-width:180px;font-size:30px}.header-contact{grid-column:1/-1;align-items:flex-start}.nav .links{gap:8px;font-size:17px}.nav .links>a{flex:1 1 auto;padding:13px 16px}.nav .links .nav-quote{margin-left:0}}
+@media(max-width:480px){.nav .brand-name{max-width:190px;font-size:32px}.nav .links>a{flex-basis:calc(50% - 8px)}}
