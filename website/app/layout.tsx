@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <AuthProvider>
           <div className="topbar">RESIDENTIAL & COMMERCIAL · NYC & LONG ISLAND <a href="tel:+16315327534">Call (631) 532-7534 ↗</a></div>
           <header className="wrap nav">
-          <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="212 Maintenance" width={150} height={115} priority /></Link>
+          <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="" width={150} height={115} priority /><span className="brand-name">212 Maintenance</span></Link>
           <address className="header-contact" aria-label="Contact 212 Maintenance">
             <a className="header-phone" href="tel:+16315327534">(631) 532-7534</a>
             <a className="header-email" href="mailto:kayden@212carpet.com">kayden@212carpet.com</a>
@@ -38,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <ReviewToggle />
           <footer>
           <div className="wrap footer-inner">
-          <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="212 Maintenance" width={150} height={115} priority /></Link>
+          <Link className="brand" href="/"><Image src="/212-maintenance.webp" alt="" width={150} height={115} priority /><span className="brand-name">212 Maintenance</span></Link>
           <p>Residential & commercial cleaning.<br />Floor care for homes and businesses.<br />NYC and Long Island.</p>
           <address style={{ fontStyle: "normal", fontSize: 14, lineHeight: 2 }}>
           <a href="tel:+16315327534">(631) 532-7534</a><br />
