@@ -9,3 +9,12 @@
 /* Keep both navigation menus usable on short screens and phones. */
 .area-dropdown-menu{max-height: min(65vh, 480px);overflow-y:auto;max-width:calc(100vw - 40px)}
 @media(max-width:520px){.links>.area-dropdown:first-child .area-dropdown-menu{left:0;right:auto}}
+
+/* Emphasize the first-screen contact form with the brand lime. */
+.hero-quote{border:2px solid var(--lime);box-shadow:0 0 0 5px #a7e85e12,0 16px 48px #0003}
+.hero-quote .quote-heading{background:var(--lime);color:var(--ink);padding:22px;border-radius:9px;margin-bottom:24px}
+.hero-quote .quote-heading .eyebrow,.hero-quote .quote-heading h2,.hero-quote .quote-heading>p{color:var(--ink)}
+.hero-quote .quote-heading h2{font-weight:900}
+.hero-quote .quote-heading>p{font-weight:700;margin-bottom:0}
+.hero-quote .contact-form label{color:var(--lime);font-weight:800;font-size:13px}
+.hero-quote .form-submit{font-weight:900;box-shadow:0 0 20px #a7e85e24}
