@@ -8,7 +8,7 @@
 
 /* Keep both navigation menus usable on short screens and phones. */
 .area-dropdown-menu{max-height: min(65vh, 480px);overflow-y:auto;max-width:calc(100vw - 40px)}
-@media(max-width:520px){.links>.area-dropdown:first-child .area-dropdown-menu{left:0;right:auto}}
+@media(max-width:520px){.links>.services-dropdown .area-dropdown-menu{left:0;right:auto}}
 
 /* Emphasize the first-screen contact form with the brand lime. */
 .hero-quote{border:2px solid var(--lime);box-shadow:0 0 0 5px #a7e85e12,0 16px 48px #0003}
