@@ -33,3 +33,17 @@
 .gallery-empty svg{color:var(--lime);margin-bottom:24px}.gallery-empty h2{font-size:32px}.gallery-empty p{max-width:540px;margin:20px auto 28px}
 @media(max-width:1000px){.links>a,.area-dropdown summary{font-size:14px;padding-left:12px;padding-right:12px}.contact-details-grid{grid-template-columns:1fr}.contact-details-grid section{padding:22px}}
 @media(max-width:520px){.links .nav-quote{margin-left:0}.links>a[aria-current="page"]{border-color:var(--lime)}.contact-centered-form{padding:22px 20px}.gallery-empty{padding:35px 20px}.gallery-empty h2{font-size:27px}}
+
+/* A consistent type system and a larger, full-resolution brand mark. */
+body{font-family:var(--font-body),Arial,Helvetica,sans-serif}
+h1,h2,h3,.brand-name,.footer-brand,.links,.button{font-family:var(--font-heading),Arial,Helvetica,sans-serif}
+h1,h2,h3{text-wrap:balance}h1{font-weight:800;letter-spacing:-.055em}h2{font-weight:800;letter-spacing:-.045em}h3{font-weight:750;letter-spacing:-.025em}
+p{font-weight:400}.intro{font-size:19px;line-height:1.75}.eyebrow{letter-spacing:.15em;font-weight:800}
+.brand-row{padding:16px 0;gap:26px}.brand{gap:22px}.brand img{width:136px;height:auto;opacity:1;border-radius:0;flex-shrink:0}
+.brand-name{font-size:38px;font-weight:800;letter-spacing:-1.7px}.brand-name>span{margin-left:6px}
+.header-phone>span:last-child{font-family:var(--font-heading),Arial,sans-serif;font-size:27px;font-weight:800;letter-spacing:-1px}
+.links{gap:6px}.links>a,.area-dropdown summary{font-size:15px;font-weight:800;letter-spacing:-.3px;padding-left:17px;padding-right:17px}
+.contact-form label{font-size:13px}.service-card p{font-size:14px;line-height:1.8}.card-link{font-size:12px}.hero h1{letter-spacing:-.055em}
+@media(max-width:1100px){.links>a,.area-dropdown summary{font-size:14px;padding-left:12px;padding-right:12px}.brand img{width:118px}.brand-name{font-size:33px}}
+@media(max-width:800px){.brand{gap:15px}.brand img{width:100px}.brand-name{font-size:29px}.brand-name>span{font-size:24px;margin:4px 0 0}.header-phone>span:last-child{font-size:22px}.intro{font-size:17px}.links{gap:5px}html{scroll-padding-top:210px}}
+@media(max-width:520px){.brand-row{gap:10px;padding:13px 0}.brand{gap:10px}.brand img{width:85px}.brand-name{font-size:25px;letter-spacing:-1px}.brand-name>span{font-size:18px}.header-phone>span:last-child{font-size:16px;letter-spacing:-.6px}.header-call-label{font-size:6px;letter-spacing:.3px}.links>a,.area-dropdown summary{font-size:14px;padding:10px 7px}.hero h1{letter-spacing:-.05em}.intro{font-size:16px}.hero .eyebrow{letter-spacing:.12em}}
