@@ -47,3 +47,18 @@ p{font-weight:400}.intro{font-size:19px;line-height:1.75}.eyebrow{letter-spacing
 @media(max-width:1100px){.links>a,.area-dropdown summary{font-size:14px;padding-left:12px;padding-right:12px}.brand img{width:118px}.brand-name{font-size:33px}}
 @media(max-width:800px){.brand{gap:15px}.brand img{width:100px}.brand-name{font-size:29px}.brand-name>span{font-size:24px;margin:4px 0 0}.header-phone>span:last-child{font-size:22px}.intro{font-size:17px}.links{gap:5px}html{scroll-padding-top:210px}}
 @media(max-width:520px){.brand-row{gap:10px;padding:13px 0}.brand{gap:10px}.brand img{width:85px}.brand-name{font-size:25px;letter-spacing:-1px}.brand-name>span{font-size:18px}.header-phone>span:last-child{font-size:16px;letter-spacing:-.6px}.header-call-label{font-size:6px;letter-spacing:.3px}.links>a,.area-dropdown summary{font-size:14px;padding:10px 7px}.hero h1{letter-spacing:-.05em}.intro{font-size:16px}.hero .eyebrow{letter-spacing:.12em}}
+
+/* Region buttons expand towns within the navigation, without changing pages. */
+.town-dropdown-menu{width:340px}
+.town-region+.town-region{border-top:1px solid var(--line)}
+.town-region-button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:48px;border:0;border-radius:5px;padding:13px 15px;background:transparent;color:var(--paper);font:inherit;font-size:15px;font-weight:750;text-align:left;cursor:pointer}
+.town-region-button:hover,.town-region-button[aria-expanded="true"]{background:var(--raised);color:var(--lime)}
+.town-region-button>span{font-size:21px;color:var(--lime)}
+.town-region-panel{padding:8px 10px 15px}
+.town-search{display:block;font-size:12px;line-height:1.5;font-weight:700;color:var(--muted)}
+.town-search input{display:block;width:100%;margin-top:7px;padding:11px;border:1px solid var(--line);border-radius:5px;background:var(--ink);color:var(--paper);font-size:16px}
+.town-count{margin:10px 0 6px;font-size:11px}
+.town-menu-links{max-height:260px;overflow-y:auto;overscroll-behavior:contain}
+.town-menu-links a{display:block;min-height:44px}
+.town-empty{font-size:13px}
+@media(max-width:520px){.town-dropdown-menu{width:min(340px,calc(100vw - 40px))}.town-menu-links{max-height:200px}}
