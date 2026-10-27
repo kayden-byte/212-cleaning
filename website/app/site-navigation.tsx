@@ -3,14 +3,18 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { regions } from "./area-data";
+import { services } from "./services";
 export default function SiteNavigation({account}:{account:React.ReactNode}){
- const dropdown=useRef<HTMLDetailsElement>(null);
+ const navigation=useRef<HTMLElement>(null);
  const pathname=usePathname();
+ const closeMenus=()=>navigation.current?.querySelectorAll<HTMLDetailsElement>("details[open]").forEach(menu=>{menu.open=false;});
  useEffect(()=>{
-  const close=(event:PointerEvent)=>{if(dropdown.current&&!dropdown.current.contains(event.target as Node))dropdown.current.open=false;};
-  const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"&&dropdown.current?.open){dropdown.current.open=false;dropdown.current.querySelector("summary")?.focus();}};
+  const close=(event:PointerEvent)=>{if(navigation.current&&!navigation.current.contains(event.target as Node))closeMenus();};
+  const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"){const open=navigation.current?.querySelector<HTMLDetailsElement>("details[open]");closeMenus();open?.querySelector("summary")?.focus();}};
   document.addEventListener("pointerdown",close);document.addEventListener("keydown",escape);
   return()=>{document.removeEventListener("pointerdown",close);document.removeEventListener("keydown",escape);};
  },[]);
- return <nav className="links" aria-label="Main navigation"><Link href="/services" aria-current={pathname.startsWith("/services")?"page":undefined}>Services</Link><details ref={dropdown} className="area-dropdown"><summary>Service areas</summary><div className="area-dropdown-menu" onClick={()=>{if(dropdown.current)dropdown.current.open=false;}}><Link href="/service-areas">All service areas</Link>{regions.map(r=><Link key={r.slug} href={"/service-areas/"+r.slug}>{r.name}</Link>)}</div></details><Link href="/#approach">Our approach</Link><Link className="nav-quote" href="/contact" aria-current={pathname==="/contact"?"page":undefined}>Request a quote</Link>{account}</nav>;
+ useEffect(()=>{closeMenus();},[pathname]);
+ const menu=(label:string,items:{href:string;name:string}[])=><details className="area-dropdown" onToggle={event=>{const current=event.currentTarget;if(current.open)navigation.current?.querySelectorAll<HTMLDetailsElement>("details").forEach(other=>{if(other!==current)other.open=false;});}}><summary>{label}</summary><div className="area-dropdown-menu" onClick={closeMenus}>{items.map(item=><Link key={item.href} href={item.href} aria-current={pathname===item.href?"page":undefined}>{item.name}</Link>)}</div></details>;
+ return <nav ref={navigation} className="links" aria-label="Main navigation">{menu("Services",services.map(s=>({href:"/services/"+s.slug,name:s.title})))}{menu("Service areas",[{href:"/service-areas",name:"All service areas"},...regions.map(r=>({href:"/service-areas/"+r.slug,name:r.name}))])}<Link href="/#approach" onClick={closeMenus}>Our approach</Link><Link className="nav-quote" href="/contact" onClick={closeMenus} aria-current={pathname==="/contact"?"page":undefined}>Request a quote</Link>{account}</nav>;
 }
