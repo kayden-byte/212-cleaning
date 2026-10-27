@@ -93,7 +93,7 @@ export const serviceCopy: Record<string, { heading: string; paragraphs: string[]
     "faqs": [
       {
         "question": "Do you offer commercial tile cleaning near my property?",
-        "answer": "Share your property address and the tile areas involved. We discuss requests across NYC and Long Island and confirm availability for the location before scheduling."
+        "answer": "Share your property address and the tile areas involved. We discuss requests across NYC, Long Island, and New Jersey and confirm availability for the location before scheduling."
       },
       {
         "question": "Will grout cleaning restore its original color?",
