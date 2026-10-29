@@ -71,3 +71,13 @@ p{font-weight:400}.intro{font-size:19px;line-height:1.75}.eyebrow{letter-spacing
 .site-header .brand:hover .brand-name>span{color:#c7fa94}
 @media(max-width:800px){.site-header .brand-name{font-size:30px;column-gap:6px;letter-spacing:-1.2px}.site-header .brand-name>span{font-size:.77em;letter-spacing:-.7px}.site-header .brand-name::after{height:2px;margin-top:4px;max-width:145px}}
 @media(max-width:520px){.site-header .brand-name{font-size:24px;column-gap:4px;line-height:1.1}.site-header .brand-name>span{font-size:.76em}.site-header .brand-name::after{max-width:110px;margin-top:2px}}
+
+/* Clear, high-contrast free quote call to action */
+.free-quote-heading{padding:18px 20px 17px;margin:0 0 22px;background:linear-gradient(115deg,rgba(167,232,94,.16),rgba(167,232,94,.035));border:1px solid rgba(167,232,94,.6);border-left:5px solid var(--lime);border-radius:10px}
+.free-quote-label{display:block;color:var(--lime);font-size:10px;font-weight:900;letter-spacing:1.5px;margin-bottom:9px}
+.free-quote-heading h3{font-family:var(--font-heading),Arial,sans-serif;font-size:clamp(23px,2.5vw,32px);font-weight:900;line-height:1.12;letter-spacing:-.8px;color:#fff}
+.free-quote-heading h3 span{color:var(--lime)}
+.free-quote-heading p{font-size:13px;line-height:1.55;margin:10px 0 0;color:var(--paper)}
+.form-submit{font-size:17px;font-weight:900;box-shadow:0 5px 22px rgba(167,232,94,.23);border:2px solid #d0ff9e;transition:transform .18s,box-shadow .18s,background .18s}
+.form-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 9px 28px rgba(167,232,94,.34)}
+.links .nav-quote{font-weight:900;box-shadow:0 3px 15px rgba(167,232,94,.18)}
