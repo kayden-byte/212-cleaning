@@ -15,6 +15,7 @@ export const metadata: Metadata = {
  metadataBase:new URL(siteUrl),title:{default:"212 Maintenance | NYC, Long Island & New Jersey Floor Cleaning",template:"%s | 212 Maintenance"},
  description:"Residential and commercial carpet cleaning, tile and grout cleaning, stone polishing, vinyl floor care, and concrete cleaning in NYC, Long Island, and New Jersey.",
  robots:{index:indexingEnabled,follow:true},
+ icons:{icon:[{url:"/212-maintenance.webp",type:"image/webp"}],apple:"/212-maintenance.webp",shortcut:"/212-maintenance.webp"},
  openGraph:{type:"website",siteName:"212 Maintenance",locale:"en_US",title:"212 Maintenance | NYC, Long Island & New Jersey Floor Cleaning",description:"Floor care for homes and businesses. Explore our services and request a cleaning quote."},
  twitter:{card:"summary",title:"212 Maintenance",description:"Residential and commercial cleaning across NYC, Long Island, and New Jersey."},
 };
